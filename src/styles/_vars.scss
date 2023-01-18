@@ -1,0 +1,40 @@
+// Colors
+
+$black: #000;
+$gray: #666;
+
+$disabled: #b3b3b3;
+
+$pink: #d91667;
+$pinkHover: #e52e7a;
+
+$yellow: #ffff66;
+
+$cyan: #1698d9;
+$cyanHover: #2ea8e6;
+
+// Mixins
+
+@mixin defaultText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 19px;
+    color: $gray;
+}
+
+@mixin title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 56px;
+    color: $black;
+}
+
+@mixin subtitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 28px;
+    color: $black;
+}

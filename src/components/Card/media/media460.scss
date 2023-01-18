@@ -1,0 +1,48 @@
+@media screen and (max-width: 460px) {
+    .food-item {
+        .card {
+            position: relative;
+            width: 270px;
+            height: 430px;
+            background-color: $cyan;
+            clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+            border-radius: 12px;
+            margin-bottom: 14px;
+            cursor: pointer;
+
+            .card-content {
+                width: 262px;
+                height: 422px;
+                background-position: -50px 200px;
+                padding: 12px 30px 0 35px;
+
+                .weight {
+                    width: 70px;
+                    height: 70px;
+                    right: 14px;
+                    bottom: 14px;
+
+                    &__count {
+                        font-size: 2.2rem;
+                    }
+
+                    &__measure {
+                        font-size: 0.9rem;
+                    }
+                }
+
+                .description {
+                    font-size: 0.9rem;
+                }
+
+                .title {
+                    font-size: 2.8rem;
+                }
+
+                .subtitle {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}

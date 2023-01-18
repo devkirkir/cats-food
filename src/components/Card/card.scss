@@ -1,0 +1,177 @@
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card {
+        position: relative;
+        width: 320px;
+        height: 480px;
+        background-color: $cyan;
+        -webkit-clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+        clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+        border-radius: 12px;
+        margin-bottom: 14px;
+        cursor: pointer;
+        transition: background 0.1s linear;
+
+        .card-content {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 312px;
+            height: 472px;
+            background-color: #f2f2f2;
+            background-image: url("./../../assets/kitten.png");
+            background-repeat: no-repeat;
+            background-position: -30px 200px;
+            -webkit-clip-path: polygon(
+                40px 0,
+                100% 0,
+                100% 100%,
+                0 100%,
+                0 40px
+            );
+            clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+            border-radius: 12px;
+            padding: 18px 45px;
+
+            .weight {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                right: 16px;
+                bottom: 16px;
+                color: #fff;
+                background-color: $cyan;
+                border-radius: 50%;
+                transition: background 0.1s linear;
+
+                &__count {
+                    font-size: 2.6rem;
+                }
+
+                &__measure {
+                    font-size: 1rem;
+                }
+            }
+
+            .description {
+                display: block;
+                @include defaultText;
+                margin-bottom: 5px;
+            }
+
+            .title {
+                @include title;
+            }
+
+            .subtitle {
+                @include subtitle;
+                margin-bottom: 15px;
+            }
+
+            .list {
+                list-style: none;
+
+                &__item {
+                    color: $gray;
+                    font-size: 0.87rem;
+                    margin-top: -2px;
+
+                    .count {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+
+        &:hover,
+        &:hover > .card-content .weight {
+            background-color: $cyanHover;
+        }
+    }
+
+    .sub-description {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        cursor: default;
+
+        &__desc {
+            font-size: 13px;
+        }
+
+        &__btn,
+        &__dot {
+            font-weight: 700;
+            color: $cyan;
+            cursor: pointer;
+            transition: 0.1s linear;
+
+            &:hover {
+                color: $cyanHover;
+                border-bottom-color: $cyanHover;
+            }
+        }
+
+        &__btn {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px dashed $cyan;
+        }
+    }
+}
+
+@import "./media/media460.scss";
+
+.food-item--selected {
+    .card {
+        background-color: $pink;
+
+        .card-content {
+            .weight {
+                background-color: $pink;
+                border-radius: 50%;
+            }
+        }
+
+        &:hover,
+        &:hover > .card-content .weight {
+            background-color: $pinkHover;
+        }
+    }
+}
+
+.food-item--disabled {
+    .card {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+        background-color: $disabled;
+
+        .card-content {
+            opacity: 0.5;
+
+            .weight {
+                background-color: $disabled;
+                border-radius: 50%;
+                transition: none;
+            }
+        }
+    }
+
+    .sub-description {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: $yellow;
+    }
+}
