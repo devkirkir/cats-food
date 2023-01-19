@@ -15,9 +15,11 @@ function Card({
 }) {
     const [isSelect, setSelect] = useState(false);
 
+    // Определяем классы для компонента
     let className = isOver ? "food-item food-item--disabled" : "food-item";
     let selected = isSelect ? "food-item--selected" : "";
 
+    // Склоняем слово, да, не совсем элегантно, но терпимо
     const getMousesWord = (mouses) => {
         if (mouses.slice(-1) == "1" && mouses !== "11") return "мышь";
 
@@ -33,6 +35,7 @@ function Card({
         return "мышей";
     };
 
+    // Присваиваем переменной склоняемое слово
     const mouseWord = getMousesWord(mouses.toString());
     mouses = mouses !== "1" ? mouses : "";
 
@@ -42,6 +45,7 @@ function Card({
         </li>
     ));
 
+    // Описываем наличие товара в описании под карточкой
     const descriptionView = !isOver ? (
         <>
             <span>Чего сидишь? Порадуй котэ, </span>
@@ -75,8 +79,8 @@ function Card({
                             <span className="count">{portion}</span> порций
                         </li>
                         <li className="list__item">
-                            <span className="count">{mouses}</span> {mouseWord}{" "}
-                            в подарок
+                            <span className="count">{mouses}</span> {mouseWord}
+                            <span>в подарок</span>
                         </li>
                         {additionalOptions}
                     </ul>
